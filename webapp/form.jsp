@@ -8,7 +8,15 @@
 </head>
 <body>
 	<h1>Input your photo:</h1>
-	<form>
+	<form action="/board/upload" method="post">
+		<label>Upload your photo:</label>
+		<input type="file" name="select">
+		<br>
+		<label>Add your comment:</label>
+		<br>
+		<textarea rows="10" cols="50" name="comment"></textarea>
+		<br>
+		<input type="submit" value="Finish">
 	</form>
 </body>
 </html>
