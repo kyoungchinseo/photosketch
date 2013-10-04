@@ -8,9 +8,12 @@
 </head>
 <body>
 	<h1>Input your photo:</h1>
-	<form action="/board/upload" method="post">
+	<form action="/board/upload" method="post" enctype="multipart/form-data">
+		Title: 
+		<input type="text" name="title">
+		<br>
 		<label>Upload your photo:</label>
-		<input type="file" name="select">
+		<input type="file" name="file">
 		<br>
 		<label>Add your comment:</label>
 		<br>
