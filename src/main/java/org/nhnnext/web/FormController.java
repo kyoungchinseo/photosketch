@@ -21,8 +21,7 @@ public class FormController {
 	}
 	@RequestMapping(value = "/board/upload", method=RequestMethod.POST)
 	public String submitForm(PhotoBoard board, MultipartFile file) {
-		System.out.println(board.getTitle());
-		System.out.println(board.getComment());
+		System.out.println(board);
 		String fileName = FileUploader.upload(file);
 		board.setFileName(fileName);
 		PhotoBoard savedBoard = boardRepository.save(board); // insert data
@@ -32,7 +31,33 @@ public class FormController {
 	@RequestMapping("/board/{id}")
 	public String show(@PathVariable Long id, Model model) {
 		PhotoBoard savedBoard = boardRepository.findOne(id);
+		System.out.println(savedBoard);
 		model.addAttribute("board",savedBoard);
 		return "show";
 	}
+	
+	@RequestMapping("/board/edit/{id}")
+	public String edit(@PathVariable Long id, Model model) {
+		PhotoBoard savedBoard = boardRepository.findOne(id);
+		model.addAttribute("board",savedBoard);
+		return "edit";
+	}
+		
+	@RequestMapping("/board/editUpload/{id}")
+	public String edit(@PathVariable Long id, PhotoBoard board, MultipartFile file, Model model) {
+		String fileName = FileUploader.upload(file);
+		board.setFileName(fileName);
+		board.setId(id);
+		System.out.println(board);
+		PhotoBoard savedBoard = boardRepository.save(board);
+		System.out.println(savedBoard);
+		model.addAttribute("board",savedBoard);
+		return "show";
+	}
+	@RequestMapping("/board/delete/{id}")
+	public String delete(@PathVariable Long id) {
+		boardRepository.delete(id);
+		return "form";
+	}
+	
 }

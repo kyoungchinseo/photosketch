@@ -41,15 +41,19 @@ public class PhotoBoard {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	@Override
-	public String toString() {
-		return "Board [title=" + title + ", comment=" + comment + "]";
-	}
-	
 	public Long getId() {
-		// TODO Auto-generated method stub
 		return Id;
 	}
+	@Override
+	public String toString() {
+		return "PhotoBoard [Id=" + Id + ", title=" + title + ", comment="
+				+ comment + ", fileName=" + fileName + "]";
+	}
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+		this.Id = id;
+	}
+	
 	
 	
 	

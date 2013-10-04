@@ -19,7 +19,7 @@
 		<br>
 		<textarea rows="10" cols="50" name="comment"></textarea>
 		<br>
-		<input type="submit" value="Finish">
+		<input type="submit" value="Submit">
 	</form>
 </body>
 </html>
