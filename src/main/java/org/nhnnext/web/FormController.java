@@ -47,17 +47,17 @@ public class FormController {
 	public String edit(@PathVariable Long id, PhotoBoard board, MultipartFile file, Model model) {
 		String fileName = FileUploader.upload(file);
 		board.setFileName(fileName);
-		board.setId(id);
-		System.out.println(board);
+		board.setId(id);  // id 값이 없으면 자동 증가하지만 id값을 지정하면 그 id로 저장된다.  
 		PhotoBoard savedBoard = boardRepository.save(board);
 		System.out.println(savedBoard);
 		model.addAttribute("board",savedBoard);
 		return "show";
 	}
+	
 	@RequestMapping("/board/delete/{id}")
 	public String delete(@PathVariable Long id) {
 		boardRepository.delete(id);
-		return "form";
+		return "index";
 	}
 	
 }

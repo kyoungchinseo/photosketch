@@ -13,7 +13,8 @@
 <br>
 <img src="/images/${board.fileName}">
 <br>
-<h2><a href="/board/edit/${board.id}">Edit</a></h2>
-<h2><a href="/board/delete/${board.id}">Delete</a></h2>
+<h2><a href="/board/edit/${board.id}">Edit</a>
+<a href="/board/delete/${board.id}">Delete</a>
+<a href="/">Finish</a></h2>
 </body>
 </html>
