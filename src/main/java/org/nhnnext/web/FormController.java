@@ -60,4 +60,11 @@ public class FormController {
 		return "index";
 	}
 	
+	@RequestMapping("/board/list")
+	public String showList(Model model) {
+		Iterable<PhotoBoard> savedBoard = boardRepository.findAll();
+		System.out.println(savedBoard.toString());
+		model.addAttribute("list",savedBoard);
+		return "list";
+	}
 }

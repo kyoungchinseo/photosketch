@@ -9,5 +9,6 @@
 <body>
 	<h1>PhotoSketch Program</h1>
 	<h2><a href="/board/formphoto">사진입력</a></h2>
+	<h2><a href="/board/list">사진목록</a></h2>
 </body>
 </html>
